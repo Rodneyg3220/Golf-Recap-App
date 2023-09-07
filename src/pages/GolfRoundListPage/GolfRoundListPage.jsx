@@ -46,73 +46,79 @@ export default function GolfRoundListPage() {
 
   };
 
+
   function handleChange(evt) {
     setNewRound({...newRound, [evt.target.name]: evt.target.value})
   };
+
+  
 
 
   return (
     <>
     <h1>My Rounds Of Golf</h1>
       <form onSubmit={handleSubmit}> 
+      <label typeof="name">Name of Course</label>
         <input
           name="name"
           type="text"
           placeholder="Enter Course Name"
           value={newRound.name}
           onChange={handleChange} />
-        <div> 
+        
 
+        <label typeof="name">Score</label>
         <input
-          name="score"
+        name="score"
           type="Number"
           placeholder="Score"
           value={newRound.score}
           onChange={handleChange} />
-          </div>
+          
 
-        <div>
+          <label typeof="numberOfPutts">Total Putts</label>
         <input
           name="numberOfPutts"
           type="Number"
           placeholder="Number of Putts"
           value={newRound.numberOfPutts}
           onChange={handleChange} />
-          </div>
+          
 
-          <div>
+          <label typeof="numberOfFairways">Total Fairways Hit</label>
         <input
           name="numberOfFairways"
           type="Number"
           placeholder="Number of Fairways"
           value={newRound.numberOfFairways}
           onChange={handleChange} />
-          </div>
+          
 
-          <div>
+          <label typeof="date">Date of Round</label>
         <input
           name="date"
           type="Date"
           placeholder="Date of Round"
           value={newRound.date}
           onChange={handleChange} />
-          </div>
-
-
-        <button type="submit">Add Rounds</button> 
+          
+         <button type="submit">Add Rounds</button> 
 
       </form>
       <div className="rounds">
         {rounds.length !== 0 ? (
           rounds.map((round) => (
-            <p key={round._id}>{round.name} {round.score} {round.numberOfPutts}
+            <p key={round._id}>
+            {round.name} {round.score} {round.numberOfPutts}
             {round.numberOfFairways} {round.date}
             </p>
           ))
         ) : (
+          
           <p>View Your Rounds Here </p>
         )}
       </div>
     </>
   );
 }
+

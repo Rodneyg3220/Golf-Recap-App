@@ -3,7 +3,15 @@ const mongoose = require('mongoose')
 
 module.exports = {
     index,
-    create
+    create,
+    delete: deleteRound
+}
+
+async function deleteRound(req, res) {
+    const round = await Round.findById(req.params.id);
+    await Round.findByIdAndDelete(meals._id);
+    res.status(201).json(round);
+    
 };
 
 async function index(req, res) {
