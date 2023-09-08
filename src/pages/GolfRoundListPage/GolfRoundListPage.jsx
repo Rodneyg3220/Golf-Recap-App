@@ -51,7 +51,20 @@ export default function GolfRoundListPage() {
     setNewRound({...newRound, [evt.target.name]: evt.target.value})
   };
 
-  
+  const handleDeleteRound =  (roundID) => {
+    const response = fetch(`/api/rounds/${roundID}`, {method: 'DELETE'})
+    .then(() => this.setState({ status: 'Delete successful' }));
+
+    const removeRound = rounds.filter((round) => round._id !== roundID);
+    setRounds(removeRound);
+  }
+
+  const handleEditRound = (roundID) => {
+    const response = fetch(`/api/rounds/${roundID}`, {method: 'PUT'})
+    .then(() => this.setState({ status: 'Edit successful' })); 
+  }
+
+
 
 
   return (
@@ -108,10 +121,22 @@ export default function GolfRoundListPage() {
       <div className="rounds">
         {rounds.length !== 0 ? (
           rounds.map((round) => (
-            <p key={round._id}>
+            <p
+            key={round._id} >
             {round.name} {round.score} {round.numberOfPutts}
             {round.numberOfFairways} {round.date}
+              <button
+                onClick={() => handleDeleteRound(round._id)}
+                className="delete-button">Delete Round
+              </button> 
+              <button
+                onClick={() => handleEditRound(round._id)}
+                className="edit-button">Edit Round
+              </button> 
+                
             </p>
+            
+            
           ))
         ) : (
           

@@ -4,12 +4,13 @@ const mongoose = require('mongoose')
 module.exports = {
     index,
     create,
-    delete: deleteRound
+    delete: deleteRounds,
+    
 }
 
-async function deleteRound(req, res) {
+async function deleteRounds(req, res) {
     const round = await Round.findById(req.params.id);
-    await Round.findByIdAndDelete(meals._id);
+    await Round.findByIdAndDelete(round._id);
     res.status(201).json(round);
     
 };
