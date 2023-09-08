@@ -62,6 +62,9 @@ export default function GolfRoundListPage() {
   const handleEditRound = (roundID) => {
     const response = fetch(`/api/rounds/${roundID}`, {method: 'PUT'})
     .then(() => this.setState({ status: 'Edit successful' })); 
+
+    const editRound = rounds.filter((round) => round._id == roundID);
+    setRounds(editRound);
   }
 
 
@@ -123,8 +126,17 @@ export default function GolfRoundListPage() {
           rounds.map((round) => (
             <p
             key={round._id} >
-            {round.name} {round.score} {round.numberOfPutts}
-            {round.numberOfFairways} {round.date}
+              <div>
+            <strong>Name of Course:</strong> &nbsp;{round.name}
+            </div>
+            <strong>Score:</strong>&nbsp;{round.score}
+            &nbsp; | &nbsp;
+            <strong>Total Putts:</strong>&nbsp;{round.numberOfPutts}
+            &nbsp; | &nbsp;
+             <strong>Total Fairways Hit:</strong>&nbsp;{round.numberOfFairways} 
+             &nbsp; | &nbsp;
+             <strong>Date of Round:</strong>&nbsp;{round.date}
+             &nbsp; | &nbsp;
               <button
                 onClick={() => handleDeleteRound(round._id)}
                 className="delete-button">Delete Round
