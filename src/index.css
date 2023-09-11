@@ -118,7 +118,7 @@ input:focus {
   border-color: var(--orange);
 }
 
-button, a.button {
+button:hover, a.button {
   margin: 1vmin;
   padding: 1vmin;
   color: var(--white);
@@ -131,6 +131,7 @@ button, a.button {
   border-radius: .5vmin;
   outline: none;
   cursor: pointer;
+  
 }
 
 button.btn-sm {

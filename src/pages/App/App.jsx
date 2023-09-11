@@ -5,6 +5,7 @@ import './App.css';
 import AuthPage from '../AuthPage/AuthPage';
 import GolfRoundListPage from '../GolfRoundListPage/GolfRoundListPage';
 import NavBar from '../../components/NavBar/NavBar';
+import EditRoundPage from '../EditRoundPage';
 
 export default function App() {
   const [user, setUser] = useState(getUser());
@@ -17,6 +18,7 @@ export default function App() {
             <Routes>
               {/* Route components in here */}
               <Route path="/rounds" element={<GolfRoundListPage />} />
+              <Route path="/edit/:id" element={<EditRoundPage />} />
             </Routes>
           </>
           :
