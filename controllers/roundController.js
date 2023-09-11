@@ -1,3 +1,4 @@
+const round = require('../models/round');
 const Round = require('../models/round')
 const mongoose = require('mongoose')
 
@@ -35,20 +36,16 @@ async function update(req, res) {
     try {
         const roundId = req.params.id;
         const updateData = req.body;
-
-        // Use findByIdAndUpdate to update the round
         const updatedRound = await Round.findByIdAndUpdate(roundId, updateData, {
-            new: true, // Return the updated round, not the original one
+            new: true,
         });
-
-        if (!updatedRound) {
-            return res.status(404).json({ message: 'Round not found' });
+    if (!updatedRound) {
+            return res.status(404).json(round);
         }
-
         res.status(200).json(updatedRound);
     } catch (error) {
         console.error(error);
-        res.status(500).json({ message: 'Internal server error' });
+        res.status(500).json(round);
     }
 }
 

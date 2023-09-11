@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function GolfRoundListPage() {
   const [rounds, setRounds] = useState([]);
@@ -139,14 +140,13 @@ export default function GolfRoundListPage() {
              &nbsp; | &nbsp;
              <strong>Date of Round:</strong>&nbsp;{round.date}
              &nbsp; | &nbsp;
-              <button
+             <button
                 onClick={() => handleDeleteRound(round._id)}
                 className="delete-button">Delete Round
               </button> 
-              <button
-                onClick={() => handleEditRound(round._id)}
-                className="edit-button">Edit Round
-              </button> 
+              <button onClick={() => handleEditRound(round._id)} className="edit-button">
+              <Link to={`/rounds/${round._id}/edit`}>Edit Round</Link>
+              </button>
 
    
                 

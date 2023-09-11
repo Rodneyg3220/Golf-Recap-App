@@ -31,19 +31,21 @@ const handleEditRound = async (evt) => {
  
 
 
-    return (
+  return (
 
-        <form onSubmit={handleEditRound}> 
-      <label typeof="name">Edit Round</label>
-        <input
-          name="name"
-          type="text"
-          placeholder="Enter Course Name"
-          value={newEdit.name}
-          onChange={handleChange} />
-        </form>
-           
+    <form onSubmit={handleEditRound}> 
+  <label typeof="name">Edit Round</label>
+    <input
+      name="name"
+      type="text"
+      placeholder="Enter Course Name"
+      value={newEdit.name}
+       />
+      
+    </form>
        
-    )
-    }
+   
+)
+}
+
 
