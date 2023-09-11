@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import {useParams} from 'react-router-dom'
 
 export default function EditRoundPage() {
-  const[edits, setEdits] = useState([])
-  const[newEdit, setNewEdit] = useEffect([])
+  
+  const[newEdit, setNewEdit] = useEffect({})
   const params = useParams()
 
 useEffect(() => {
@@ -12,7 +12,7 @@ useEffect(() => {
         const json = await response.json();
     
         if (response.ok) {
-        setEdits(json)
+        setNewEdit(json)
         }
     }
     
@@ -29,22 +29,26 @@ const handleEditRound = async (evt) => {
 
   })}
  
+  function handleChange(evt) {
+    setNewEdit({...newEdit, [evt.target.name]: evt.target.value})
+  };
 
 
   return (
-
-    <form onSubmit={handleEditRound}> 
+    <>
+   {isRound &&  ( <form onSubmit={handleEditRound}> 
   <label typeof="name">Edit Round</label>
     <input
       name="name"
       type="text"
       placeholder="Enter Course Name"
       value={newEdit.name}
+      onChange={handleChange}
        />
-      
-    </form>
-       
-   
+      <button type="submit">Save</button>
+    </form>)
+  }        
+   </>
 )
 }
 

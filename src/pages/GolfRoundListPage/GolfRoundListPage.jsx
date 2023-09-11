@@ -63,7 +63,7 @@ export default function GolfRoundListPage() {
 
   const handleEditRound = (roundID) => {
     const response = fetch(`/api/rounds/${roundID}`, {method: 'PUT'})
-    .then(() => this.setState({ status: 'Edit successful' })); 
+     
 
     const editRound = rounds.filter((round) => round._id == roundID);
     setRounds(editRound);
@@ -127,11 +127,12 @@ export default function GolfRoundListPage() {
       <div className="rounds">
         {rounds.length !== 0 ? (
           rounds.map((round) => (
-            <p
-            key={round._id} >
-              <div>
+            
+          
+              <div
+                key={round._id} >
             <strong>Name of Course:</strong> &nbsp;{round.name}
-            </div>
+            
             <strong>Score:</strong>&nbsp;{round.score}
             &nbsp; | &nbsp;
             <strong>Total Putts:</strong>&nbsp;{round.numberOfPutts}
@@ -150,7 +151,7 @@ export default function GolfRoundListPage() {
 
    
                 
-            </p>
+            </div>
             
             
           ))

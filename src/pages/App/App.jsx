@@ -18,7 +18,7 @@ export default function App() {
             <Routes>
               {/* Route components in here */}
               <Route path="/rounds" element={<GolfRoundListPage />} />
-              <Route path="/edit/:id" element={<EditRoundPage />} />
+              <Route path="/rounds/:id/edit" element={<EditRoundPage />} />
             </Routes>
           </>
           :
