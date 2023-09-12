@@ -28,12 +28,12 @@ export default function GolfRoundListPage() {
 
   const handleSubmit = async (evt) => {
     evt.preventDefault();
-    const response = await sendRequest('/api/rounds', 'POST', 
+    const newRoundObj = await sendRequest('/api/rounds', 'POST', 
    (newRound)
 
   )
 
-  const newRoundObj = await response.json();
+ 
     
 
       setRounds([...rounds, newRoundObj]);
