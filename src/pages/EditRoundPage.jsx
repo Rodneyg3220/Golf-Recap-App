@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 
 export default function EditRoundPage() {
   
   const[newEdit, setNewEdit] = useState()
   const params = useParams()
+  const navigate = useNavigate();
 
 
 useEffect(() => {
@@ -27,7 +28,11 @@ const handleEditRound = async (evt) => {
     headers: {'Content-Type': 'application/json'}, 
     body: JSON.stringify(newEdit),
     
-  })
+  });
+
+  if (response.ok) {
+    navigate('/rounds'); 
+  }
 
 
 }
