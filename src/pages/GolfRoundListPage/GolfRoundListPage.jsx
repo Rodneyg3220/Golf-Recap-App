@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import sendRequest from "../../utilities/send-request";
 
 export default function GolfRoundListPage() {
   const [rounds, setRounds] = useState([]);
@@ -14,12 +15,12 @@ export default function GolfRoundListPage() {
 
   useEffect(() => {
     const fetchRounds = async () => {
-      const response = await fetch("/api/rounds");
-      const json = await response.json();
+      const json = await sendRequest("/api/rounds");
+      
 
-      if (response.ok) {
+      
         setRounds(json);
-      }
+      
     };
 
     fetchRounds();
@@ -27,11 +28,10 @@ export default function GolfRoundListPage() {
 
   const handleSubmit = async (evt) => {
     evt.preventDefault();
-    const response = await fetch('/api/rounds', {method: 'POST', 
-    headers: {'Content-Type': 'application/json'}, 
-    body: JSON.stringify(newRound)
+    const response = await sendRequest('/api/rounds', 'POST', 
+   (newRound)
 
-  })
+  )
 
   const newRoundObj = await response.json();
     
@@ -54,15 +54,15 @@ export default function GolfRoundListPage() {
   };
 
   const handleDeleteRound =  (roundID) => {
-    const response = fetch(`/api/rounds/${roundID}`, {method: 'DELETE'})
-    .then(() => this.setState({ status: 'Delete successful' }));
+    const response = sendRequest(`/api/rounds/${roundID}`, 'DELETE')
+    
 
     const removeRound = rounds.filter((round) => round._id !== roundID);
     setRounds(removeRound);
   }
 
   const handleEditRound = (roundID) => {
-    const response = fetch(`/api/rounds/${roundID}`, {method: 'PUT'})
+    const response = sendRequest(`/api/rounds/${roundID}`,'PUT')
      
 
     const editRound = rounds.filter((round) => round._id == roundID);

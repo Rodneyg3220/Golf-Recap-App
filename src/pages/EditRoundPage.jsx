@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from 'react-router-dom'
+import sendRequest from "../utilities/send-request";
 
 export default function EditRoundPage() {
   
@@ -10,12 +11,12 @@ export default function EditRoundPage() {
 
 useEffect(() => {
     const fetchEdits = async () => {
-        const response = await fetch(`/api/rounds/${params.id}`);
-        const json = await response.json();
+        const json = await sendRequest(`/api/rounds/${params.id}`);
+        
     
-        if (response.ok) {
+       
         setNewEdit(json)
-        }
+        
     }
     
     fetchEdits()
@@ -24,15 +25,14 @@ useEffect(() => {
 
 const handleEditRound = async (evt) => {
     evt.preventDefault();
-    const response = await fetch(`/api/rounds/${params.id}`, {method: 'PUT', 
-    headers: {'Content-Type': 'application/json'}, 
-    body: JSON.stringify(newEdit),
+    const response = await sendRequest(`/api/rounds/${params.id}`,'PUT', 
+    (newEdit),
     
-  });
+  );
 
-  if (response.ok) {
+  
     navigate('/rounds'); 
-  }
+  
 
 
 }
