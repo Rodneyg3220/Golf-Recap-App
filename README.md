@@ -6,78 +6,43 @@ https://git.heroku.com/murmuring-citadel-15191.git
 
 https://trello.com/b/oF8alnjI/golf-recap-app
 
-# How It Works
+# Golf Recap App
 
-Str
+The Golf Recap App is a simple way for the everyday golf addict who cant take their mind off of the game to keep track of every round of golf that they play. Keep track of the courses you play, record your score, and other performance stats from that round of golf.
 
 
-# Getting Started
+# How To Use
 
-This Golf 
+Simply create a profile to log in and select the "My Golf Rounds List Page" to begin adding your rounds of golf. You will also have the option to later delete or edit each round of golf that you have added.
 
-## Available Scripts
 
-In the project directory, you can run:
+# Technologies Used
 
-### `npm start`
+MongoDB/Mongoose
+Express
+React
+Node
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# AAU
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+-AAU I want to be able to input my score from the round that was played, because I would like to look at it so see if my score is improving or not.
 
-### `npm test`
+-AAU I want to be able to keep track of the name of the golf course I played, because I would like remember the name.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+-AAU I want to be able to input the total number of putts from my round of golf because I want to measure my performance.
 
-### `npm run build`
+-AAU I want to be able to input the number of fairways hit in regulation, because I want to measure my performance.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+-AAU I want to add the date for the round of golf that was played
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+-AAU I want my golf round info to be associated with my own profile, because I want to keep my rounds of golf private.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+-AAU I want to be able to log in and log out, because I would to to secure my profile.
 
-### `npm run eject`
+# IceBox/In The Future
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+-In the future I would like share my rounds and stats with friends.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+-In the future I would like to add comments from the rounds.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+-In the future I like to associate which club was used for each shot.
