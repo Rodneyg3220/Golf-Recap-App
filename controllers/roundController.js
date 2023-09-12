@@ -28,7 +28,7 @@ async function create(req, res) {
 }
 
 async function findById(req, res) {
-    const edit = await Edit.findById(req.params.id);
+    const edit = await Round.findById(req.params.id);
     res.status(200).json(edit)
 }
 
