@@ -18,7 +18,7 @@ async function deleteRounds(req, res) {
 };
 
 async function index(req, res) {
-    const rounds = await Round.find({})
+    const rounds = await Round.find({user: req.user._id})
     res.json(rounds);
 }
 
