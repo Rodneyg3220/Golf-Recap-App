@@ -4,7 +4,11 @@ https://git.heroku.com/murmuring-citadel-15191.git
 
 # Trello Board
 
+https://trello.com/b/oF8alnjI/golf-recap-app
 
+# How It Works
+
+Str
 
 
 # Getting Started

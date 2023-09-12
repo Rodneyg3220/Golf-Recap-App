@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const favicon = require('serve-favicon');
 const logger = require('morgan');
+const ensureLoggedIn = require('./config/ensureLoggedIn');
 // Always require and configure near the top
 require('dotenv').config();
 // Connect to the database
@@ -26,7 +27,7 @@ const port = process.env.PORT || 3001;
 // Put API routes here, before the "catch all" route
 app.use('/api/users', require('./routes/api/users'));
 
-app.use('/api/rounds', require('./routes/round'));
+app.use('/api/rounds', require('./config/ensureLoggedIn'), require('./routes/round'));
 
 
 // The following "catch all" route (note the *) is necessary
