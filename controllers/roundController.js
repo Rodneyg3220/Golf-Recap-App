@@ -36,6 +36,7 @@ async function update(req, res) {
     try {
         const roundId = req.params.id;
         const updateData = req.body;
+        updateData.user = req.user._id
         const updatedRound = await Round.findByIdAndUpdate(roundId, updateData, {
             new: true,
         });
