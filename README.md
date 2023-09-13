@@ -20,10 +20,7 @@ Simply create a profile to log in and select the "My Golf Rounds List Page" to b
 
 # Technologies Used
 
-MongoDB/Mongoose
-Express
-React
-Node
+MongoDB/Mongoose | Express | React | Node
 
 # AAU
 
