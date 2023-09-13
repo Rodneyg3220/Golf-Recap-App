@@ -1,6 +1,6 @@
 # Golf Recap App
 
-https://git.heroku.com/murmuring-citadel-15191.git
+https://golfrecapapp-5f84b60ecd9e.herokuapp.com/rounds
 
 # Trello Board
 
@@ -14,6 +14,8 @@ The Golf Recap App is a simple way for the everyday golf addict who cant take th
 # How To Use
 
 Simply create a profile to log in and select the "My Golf Rounds List Page" to begin adding your rounds of golf. You will also have the option to later delete or edit each round of golf that you have added.
+
+# Wireframe / ERD
 
 
 # Technologies Used
