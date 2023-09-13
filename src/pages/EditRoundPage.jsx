@@ -11,14 +11,10 @@ export default function EditRoundPage() {
 
 useEffect(() => {
     const fetchEdits = async () => {
-        const json = await sendRequest(`/api/rounds/${params.id}`);
+    const json = await sendRequest(`/api/rounds/${params.id}`);
         
-    
-       
-        setNewEdit(json)
-        
+    setNewEdit(json)
     }
-    
     fetchEdits()
     
 },[] )
@@ -27,25 +23,15 @@ const handleEditRound = async (evt) => {
     evt.preventDefault();
     const response = await sendRequest(`/api/rounds/${params.id}`,'PUT', 
     (newEdit),
-    
-  );
-
-  
-    navigate('/rounds'); 
-  
-
-
+);
+navigate('/rounds'); 
 }
 
-
-    
-  function handleChange(evt) {
+function handleChange(evt) {
     setNewEdit({...newEdit, [evt.target.name]: evt.target.value})
   };
-    
   
-
-  return (
+return (
     <>
    { newEdit &&   ( <form onSubmit={handleEditRound}> 
   <label typeof="name">Edit Round</label>

@@ -12,8 +12,7 @@ export default function GolfRoundListPage() {
    date: ""
   }); 
   
-
-  useEffect(() => {
+useEffect(() => {
     const fetchRounds = async () => {
       const json = await sendRequest("/api/rounds");
       
@@ -33,20 +32,15 @@ export default function GolfRoundListPage() {
 
   )
 
- 
-    
-
-      setRounds([...rounds, newRoundObj]);
-      setNewRound({
-        name: "",
-        score: 0,
-        numberOfPutts: 0,
-        numberOfFairways: 0,
-        date: ""
-       });
-    
-
-  };
+setRounds([...rounds, newRoundObj]);
+    setNewRound({
+      name: "",
+      score: 0,
+      numberOfPutts: 0,
+      numberOfFairways: 0,
+      date: ""
+  });
+};
 
 
   function handleChange(evt) {
@@ -69,11 +63,7 @@ export default function GolfRoundListPage() {
     setRounds(editRound);
   }
 
-  
-
-
-
-  return (
+return (
     <>
     <h1>My Rounds Of Golf</h1>
       <form onSubmit={handleSubmit}> 
@@ -129,7 +119,7 @@ export default function GolfRoundListPage() {
           rounds.map((round) => (
             
           
-              <div
+            <div
                 key={round._id} >
             <strong>Name of Course:</strong> &nbsp;{round.name}
             
@@ -148,9 +138,6 @@ export default function GolfRoundListPage() {
               <button onClick={() => handleEditRound(round._id)} className="edit-button">
               <Link to={`/rounds/${round._id}/edit`}>Edit Round</Link>
               </button>
-
-   
-                
             </div>
             
             
