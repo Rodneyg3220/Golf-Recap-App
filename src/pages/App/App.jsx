@@ -12,17 +12,17 @@ export default function App() {
 
   return (
     <main className="App">
-      { user ?
-          <>
-            <NavBar user={user} setUser={setUser} />
-            <Routes>
-              {/* Route components in here */}
-              <Route path="/rounds" element={<GolfRoundListPage />} />
-              <Route path="/rounds/:id/edit" element={<EditRoundPage />} />
-            </Routes>
-          </>
-          :
-          <AuthPage setUser={setUser} />
+      {user ?
+        <>
+          <NavBar user={user} setUser={setUser} />
+          <Routes>
+            {/* Route components in here */}
+            <Route path="/rounds" element={<GolfRoundListPage />} />
+            <Route path="/rounds/:id/edit" element={<EditRoundPage />} />
+          </Routes>
+        </>
+        :
+        <AuthPage setUser={setUser} />
       }
     </main>
   );

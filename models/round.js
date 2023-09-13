@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const bcrypt = require('bcrypt');
 
-const roundSchema = new Schema ({
+const roundSchema = new Schema({
     name: String,
     score: Number,
     numberOfPutts: Number,
@@ -10,9 +10,9 @@ const roundSchema = new Schema ({
     date: Date,
     user: Schema.Types.ObjectId
 },
-{
-    timestamps: true
-}
+    {
+        timestamps: true
+    }
 )
 
 module.exports = mongoose.model('Round', roundSchema);

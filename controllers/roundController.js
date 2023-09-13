@@ -14,11 +14,11 @@ async function deleteRounds(req, res) {
     const round = await Round.findById(req.params.id);
     await Round.findByIdAndDelete(round._id);
     res.status(201).json(round);
-    
+
 };
 
 async function index(req, res) {
-    const rounds = await Round.find({user: req.user._id})
+    const rounds = await Round.find({ user: req.user._id })
     res.json(rounds);
 }
 
@@ -40,7 +40,7 @@ async function update(req, res) {
         const updatedRound = await Round.findByIdAndUpdate(roundId, updateData, {
             new: true,
         });
-    if (!updatedRound) {
+        if (!updatedRound) {
             return res.status(404).json(round);
         }
         res.status(200).json(updatedRound);
@@ -50,4 +50,3 @@ async function update(req, res) {
     }
 }
 
-    
