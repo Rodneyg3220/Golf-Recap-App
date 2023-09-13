@@ -17,12 +17,11 @@ export default function GolfRoundListPage() {
   useEffect(() => {
     const fetchRounds = async () => {
       const json = await sendRequest("/api/rounds");
-
+      // Update the 'rounds' state
       setRounds(json);
 
     };
 
-    // Call the 'fetchRounds' function when the component mounts
     fetchRounds();
   }, []);
 
