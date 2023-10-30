@@ -1,6 +1,6 @@
 # Golf Recap App
 
-https://golfrecapapp-5f84b60ecd9e.herokuapp.com/rounds
+https://the-golf-recap-app-f2fb85083935.herokuapp.com/
 
 # Trello Board
 
